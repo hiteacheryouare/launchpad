@@ -2,8 +2,10 @@
 import { Data } from '@typescript/types';
 import Image from 'next/image'
 import { useState } from 'react';
+import encodeData from '@typescript/encode';
 
-export default async function Home() {
+export default function Home() {
+  
   const [data, setData] = useState<Data>({
     name: '',
     description: ""
@@ -15,7 +17,7 @@ export default async function Home() {
         <input type="text" name="name" id="name" className='border-2 form-control' onChange={(e) => {setData({...data, name: e.target.value})}} />
       </form>
       <div className='mt-4'>
-        <a href={`/view?name=${data.name}`} className="btn btn-primary">view da result</a>
+        <a href={`/view/${encodeData(data)}`} className="btn btn-primary"></a>
       </div>
     </>
   )
