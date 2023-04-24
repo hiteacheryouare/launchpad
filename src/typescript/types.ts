@@ -1,7 +1,3 @@
-export interface Link {
-  name: string;
-  url: string;
-}
 export interface Data {
   name: string;
   photoURL?: string;
@@ -19,5 +15,5 @@ export interface Data {
   twitch?: string;
   messenger?: string;
   phone?: string;
-  links?: Link[];
+  email?: string;
 }

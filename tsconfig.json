@@ -21,7 +21,8 @@
     ],
     "paths": {
       "@typescript/*": ["./src/typescript/*"],
-      "@styles/*": ["./src/styles/*"]
+      "@styles/*": ["./src/styles/*"],
+      "@icons/*": ["./node_modules/bootstrap-icons/icons/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
