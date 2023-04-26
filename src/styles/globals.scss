@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
 $prefix: "lp-";
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
