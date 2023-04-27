@@ -1,5 +1,4 @@
 'use client'; // Error components must be Client components
-import WarningTriangle from 'bootstrap-icons/icons/exclamation-triangle.svg'
 import Image from 'next/image';
 import { useEffect } from 'react';
 
@@ -17,8 +16,8 @@ export default function Error({
 
     return (
         <div className=''>
-            <div className='flex content-center justify-center p-4 text-red-600'>
-                <Image src={WarningTriangle} height={300} alt="Warning Triangle"></Image>
+            <div className='flex content-center justify-center p-4 text-9xl text-red-600'>
+                <i className='bi bi-exclamation-triangle'></i>
             </div>
             <h2 className='text-center text-red-600'>Blunder!</h2>
             <div className='flex content-center justify-center p-4'>
