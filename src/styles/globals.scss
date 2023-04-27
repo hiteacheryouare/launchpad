@@ -1,8 +1,33 @@
+/*
+*************************************** 
+Launchpad v0.0.1 
+Copyright (c) 2023-2023, Ryan Mullin 
+***************************************
+*/
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
 
 $prefix: "lp-";
+$primary: #8338EC;
+$secondary: #FF006E;
+$accent: #FFBE0B;
+$orange: #FB5607;
+$blue: #3A86FF;
+$purple: $primary;
+$pink: $secondary;
+@media (prefers-color-scheme: dark) {
+    * {
+        background-color: #000000;
+        color: #FFF;
+    }
+}
 @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
-@import "../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+*::selection {
+    background-color: $primary;
+    color: white;
+}

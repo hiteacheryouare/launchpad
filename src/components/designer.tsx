@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import '../styles/iframe.module.scss';
+import '../styles/form.scss'
 
 import encodeData from '@typescript/encode';
 import type { Data } from '@typescript/types';

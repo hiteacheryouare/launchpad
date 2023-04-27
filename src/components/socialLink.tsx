@@ -1,3 +1,4 @@
+import Link from "next/link";
 interface PROPS {
     name: string;
     link: string;
@@ -9,9 +10,9 @@ interface PROPS {
 import Image from "next/image";
 export default function SocialLink(props: PROPS) {
     return (
-        <a href={props.link} target="_blank" rel="noreferrer">
+        <Link href={props.link} target="_blank" rel="noreferrer">
             <Image src={props.image.src} alt={props.image.alt} width={50} height={50} />
-        </a>
+        </Link>
     )
 
 }
