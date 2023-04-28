@@ -7,6 +7,7 @@ import encodeData from '@typescript/encode';
 import type { Data } from '@typescript/types';
 import Viewer from './viewer';
 
+
 const Designer = () => {
     const [data, setData] = useState<Data>({
         name: '',
@@ -37,6 +38,13 @@ const Designer = () => {
         const url = `${appURL}/view/${encodeData(data)}`;
         window.navigator.clipboard.writeText(url).then(() => alert('Copied to clipboard!'));
     }
+    const createEmbed = () => {
+        const url = `${appURL}/view/${encodeData(data)}`;
+        const embed = `<iframe src="${url}" width="100%" height="100%" style="border: none;"></iframe>`;
+        window.navigator.clipboard.writeText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
+    }
+    
+    
     const prefillData = () => setData({
             name: 'John Doe',
             photoURL: 'https://i.pravatar.cc/300',
@@ -61,6 +69,7 @@ const Designer = () => {
     return (
         <>
             <div className="grid grid-cols-2 portrait:grid-cols-1">
+                <div>
                 <form className="p-4" onSubmit={handleSubmit}>
                     <label className="form-label" htmlFor="name">
                         Name
@@ -276,13 +285,18 @@ const Designer = () => {
                         onChange={handleInputChange}
                     />
                     <div className="pt-4">
+                        <button type="submit" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#copied">Submit & Copy Link</button>
+                        &nbsp;
+                    </div>
+                </form>
+                    <div className="p-4">
                         <button onClick={prefillData} onKeyDown={prefillData} className="btn btn-secondary">
                             Prefill Data
                         </button>
                         &nbsp;
-                        <button type="submit" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#copied">Submit & Copy Link</button>
+                        <button onClick={createEmbed} onKeyDown={createEmbed} className='btn btn-info'>Embed Card</button>
                     </div>
-                </form>
+            </div>
                 <div>
                     <Viewer
                         name={data.name}
