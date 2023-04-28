@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import '../styles/iframe.module.scss';
 import '../styles/form.scss'
-
+import { url as appURL } from '@typescript/constants';
 import encodeData from '@typescript/encode';
 import type { Data } from '@typescript/types';
 import Viewer from './viewer';
@@ -34,7 +34,7 @@ const Designer = () => {
     };
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const url = `${window.location.origin}/view/${encodeData(data)}`;
+        const url = `${appURL}/view/${encodeData(data)}`;
         window.navigator.clipboard.writeText(url).then(() => alert('Copied to clipboard!'));
     }
     const prefillData = () => setData({
