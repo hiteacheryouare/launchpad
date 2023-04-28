@@ -1,11 +1,23 @@
 import '@styles/globals.scss'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import Comment from '../../components/comment'
 import { banner } from '../../typescript/constants'
 import {name, description} from '../../typescript/constants'
 import Navbar from '../../components/nav'
 
-const inter = Inter({ weight: "variable", subsets: ['latin'] })
+const poppins = Poppins({
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+  ], subsets: ['latin']
+})
 
 export const metadata = {
   title: name,
@@ -20,7 +32,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={poppins.className}>
           <Comment text={banner} />
           <Navbar />
           {children}
