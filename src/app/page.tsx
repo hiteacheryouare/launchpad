@@ -1,3 +1,4 @@
+'use client'
 import Typer from "../components/typer";
 import HeroIframe from '../components/heroIframe'
 import Link from "next/link";
