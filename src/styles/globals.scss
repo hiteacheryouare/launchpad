@@ -18,7 +18,7 @@ $blue: #3A86FF;
 $purple: $primary;
 $pink: $secondary;
 @media (prefers-color-scheme: dark) {
-    * {
+    *:not(i) {
         background-color: #000000;
         color: #FFF;
     }

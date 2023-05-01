@@ -20,6 +20,8 @@ export default function Error({
                 <i className='bi bi-exclamation-triangle'></i>
             </div>
             <h2 className='text-center text-red-600'>Blunder!</h2>
+            <h3 className='text-center text-red-700'>{error.name}</h3>
+            <h4 className='text-center text-red-800'>{error.message}</h4>
             <div className='flex content-center justify-center p-4'>
                 <button
                     className='btn btn-danger'
