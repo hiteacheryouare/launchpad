@@ -1,12 +1,12 @@
 import { Data } from "@typescript/types"
 import SocialLink from "./socialLink"
 import Link from "next/link"
-export default function Viewer(data: Data) {
-    return (
+import Image from "next/image"
+export default (data: Data) => (
         <div>
             <div className="m-auto">
                 <div className="flex content-center justify-center p-4" style={{fontSize: '20rem'}}>
-                    {data.photoURL ? <img src={data.photoURL} alt="" className='rounded-full w-32' /> :
+                    {data.photoURL ? <Image src={data.photoURL} alt="" className='rounded-full w-32' /> :
                         <i className="bi bi-person-circle"></i>
                     }
                 </div>
@@ -81,4 +81,3 @@ export default function Viewer(data: Data) {
             </div>
         </div>
     )
-}
