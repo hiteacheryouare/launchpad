@@ -6,7 +6,7 @@ export default (data: Data) => (
         <div>
             <div className="m-auto">
                 <div className="flex content-center justify-center p-4" style={{fontSize: '20rem'}}>
-                    {data.photoURL ? <Image src={data.photoURL} alt="" className='rounded-full w-32' /> :
+                    {data.photoURL ? <img src={data.photoURL} alt="" className='rounded-full w-32' /> :
                         <i className="bi bi-person-circle"></i>
                     }
                 </div>

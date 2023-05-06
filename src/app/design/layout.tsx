@@ -32,6 +32,9 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
+        <head>
+          <link rel="shortcut icon" href="/rocket-takeoff-fill.svg" type="image/x-icon" />
+        </head>
         <body className={poppins.className}>
           <Comment text={banner} />
           <Navbar />
