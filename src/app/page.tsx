@@ -17,7 +17,7 @@ export default () => (
         <HeroIframe />
       </div>
       <div className="flex content-center justify-center">
-        <Link href="#ydps" className="rounded-full flex content-center justify-center bg-theme-accent animate-bounce">
+        <Link href="/#ydps" className="rounded-full flex content-center justify-center bg-theme-accent animate-bounce" scroll={false}>
           <Icon name="arrow-down" />
         </Link>
       </div>

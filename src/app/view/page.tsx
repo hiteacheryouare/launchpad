@@ -2,8 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../components/nav";
-export default function ViewGeneric() {
-    const [id, setId] = useState("");
+export default () => {
+    const [id, setId] = useState<string>("");
     return (
         <>
         <div className="no-underline">
