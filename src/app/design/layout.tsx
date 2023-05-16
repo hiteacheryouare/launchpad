@@ -4,6 +4,7 @@ import Comment from '../../components/comment'
 import { banner } from '../../typescript/constants'
 import {name, description} from '../../typescript/constants'
 import Navbar from '../../components/nav'
+import Footer from '../../components/footer'
 
 const poppins = Poppins({
   weight: [
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Comment text={banner} />
           <Navbar />
           {children}
+          <Footer />
         </body>
       </html>
     </>

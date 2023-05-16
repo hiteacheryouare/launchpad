@@ -10,7 +10,8 @@ export default () => (
         Take your <Typer /> <span className="underline">to the moon</span>
         <div>
           <Link href="/design" className="btn btn-light"> <i className="bi bi-layers-half"></i> Launch the Generator</Link> &nbsp;
-          <Link href="/view" className="btn btn-dark"> <i className="bi bi-eye"></i> View a Creation</Link>
+          <Link href="/view" className="btn btn-dark"> <i className="bi bi-eye"></i> View a Creation</Link> &nbsp;
+          <Link href="/api" className="btn btn-info"> <i className="bi bi-code"></i> API Reference</Link>
         </div>
       </div>
       <div>

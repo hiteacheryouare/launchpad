@@ -1,20 +1,20 @@
 export interface Data {
   name: string;
-  photoURL?: string
-  description: string
-  instagram?: string
-  facebook?: string
-  twitter?: string
-  youtube?: string
-  tiktok?: string
-  discord?: string
-  pinterest?: string
-  spotify?: string
-  snapchat?: string
-  reddit?: string
-  twitch?: string;
-  messenger?: string
-  phone?: string;
-  email?: string;
-  magicLink?: string;
+  photoURL?: string | null
+  description: string | null
+  instagram?: string | null
+  facebook?: string | null
+  twitter?: string | null
+  youtube?: string | null
+  tiktok?: string | null
+  discord?: string | null
+  pinterest?: string | null
+  spotify?: string | null
+  snapchat?: string | null
+  reddit?: string | null
+  twitch?: string | null;
+  messenger?: string | null
+  phone?: string | null;
+  email?: string | null;
+  magicLink?: string | null;
 }

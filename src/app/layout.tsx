@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import Comment from '../components/comment'
 import { banner } from '../typescript/constants'
 import { name, description } from '../typescript/constants'
+import Footer from '../components/footer'
 
 const poppins = Poppins({ weight: [
     "100",
@@ -35,6 +36,7 @@ export default function RootLayout({
                 <body className={poppins.className}>
                     <Comment text={banner} />
                     {children}
+                    <Footer />
                 </body>
             </html>
         </>
