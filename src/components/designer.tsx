@@ -281,7 +281,7 @@ const Designer = () => {
                         name='magicLink'
                         id='magicLink'
                         className='border-2 form-control'
-                        value={data.magicLink}
+                        value={data.magicLink || ""}
                         onChange={handleInputChange}
                     />
                     <div className="pt-4">

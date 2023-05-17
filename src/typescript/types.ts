@@ -1,7 +1,7 @@
 export interface Data {
   name: string;
   photoURL?: string | null
-  description: string | null
+  description: string
   instagram?: string | null
   facebook?: string | null
   twitter?: string | null
