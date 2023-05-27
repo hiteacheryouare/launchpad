@@ -291,20 +291,20 @@ const Designer = () => {
 							onChange={handleInputChange}
 						/>
 						<div className="pt-4">
-							<button type="submit" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#copied">Submit & Copy Link</button>
+							<button type="submit" className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#copied"><Icon name='clipboard'/>Submit & Copy Link</button>
                         &nbsp;
 						</div>
 					</form>
 					<div className="p-4">
 						<button onClick={prefillData} onKeyDown={prefillData} className="btn btn-secondary">
-                            Prefill Data
+                            <Icon name='lightning'/>Prefill Data
 						</button>
                         &nbsp;
 						<button onClick={clearData} onKeyDown={clearData} className="btn btn-warning">
-							Clear Data
+							<Icon name='trash'/>Clear Data
 						</button>
 						&nbsp;
-						<button onClick={createEmbed} onKeyDown={createEmbed} className='btn btn-info'>Embed Card</button>
+						<button onClick={createEmbed} onKeyDown={createEmbed} className='btn btn-info'><Icon name='code'/>Embed Card</button>
 					</div>
 				</div>
 				<div>
