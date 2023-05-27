@@ -1,5 +1,5 @@
 'use client';
-
+import { setClipboardText } from 'uadetect/dist/clipboard'
 import { useState } from 'react';
 import '../styles/iframe.module.scss';
 import '../styles/form.scss';
@@ -7,6 +7,7 @@ import { url as appURL } from '@typescript/constants';
 import encodeData from '@typescript/encode';
 import type { Data } from '@typescript/types';
 import Viewer from './viewer';
+import Icon from './icon';
 
 const Designer = () => {
 	const [data, setData] = useState<Data>({
@@ -29,41 +30,43 @@ const Designer = () => {
 		email: '',
 		magicLink: '',
 	});
-
+	let readyToSubmit = false;
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		readyToSubmit = true;
 		setData({ ...data, [e.target.name]: e.target.value });
 	};
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const url = `${appURL}/view/${encodeData(data)}`;
-		window.navigator.clipboard.writeText(url).then(() => alert('Copied to clipboard!'));
+		setClipboardText(url).then(() => alert('Copied to clipboard!'));
 	};
 	const createEmbed = () => {
 		const url = `${appURL}/view/${encodeData(data)}`;
 		const embed = `<iframe src="${url}" width="100%" height="100%" style="border: none;"></iframe>`;
-		window.navigator.clipboard.writeText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
+		setClipboardText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
 	};
 
 	const prefillData = () => setData({
 		name: 'John Doe',
 		photoURL: 'https://i.pravatar.cc/300',
 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.',
-		instagram: 'john.doe',
-		facebook: 'john.doe',
-		twitter: 'john.doe',
-		youtube: 'john.doe',
-		tiktok: 'john.doe',
-		discord: 'john.doe',
-		pinterest: 'john.doe',
-		spotify: 'john.doe',
-		snapchat: 'john.doe',
-		reddit: 'john.doe',
-		twitch: 'john.doe',
-		messenger: 'john.doe',
+		instagram: 'https://www.instagram.com/ianhecox/',
+		facebook: 'https://www.facebook.com/Meta/',
+		twitter: 'https://twitter.com/mkbhd',
+		youtube: 'https://www.youtube.com/channel/UCNIuvl7V8zACPpTmmNIqP2A',
+		tiktok: 'https://www.tiktok.com/@joerauth_',
+		discord: 'https://discord.com/invite/zsE9rwM',
+		pinterest: 'https://www.pinterest.com/ideas/',
+		spotify: 'https://open.spotify.com/artist/4tZwfgrHOc3mvqYlEYSvVi',
+		snapchat: 'https://www.snapchat.com/',
+		reddit: 'https://www.reddit.com/r/memes/',
+		twitch: 'https://www.twitch.tv/chocotaco',
+		messenger: 'https://www.messenger.com/',
 		phone: '+1 (555) 555-5555',
 		email: 'john.dover@joemail.com',
 		magicLink: 'https://demotivator.web.app/',
 	});
+	const clearData = () => setData({name: "",description: ""})
 
 	return (
 		<>
@@ -71,19 +74,22 @@ const Designer = () => {
 				<div>
 					<form className="p-4" onSubmit={handleSubmit}>
 						<label className="form-label" htmlFor="name">
-                        Name
+							<Icon name='person' />Name
 						</label>
-						<input
-							type="text"
-							name="name"
-							id="name"
-							className="border-2 form-control"
-							onChange={handleInputChange}
-							value={data.name}
-						/>
+						<div className='input-group'>
+							<input
+								type="text"
+								name="name"
+								id="name"
+								className="border-2 h-full form-control"
+								onChange={handleInputChange}
+								value={data.name}
+								required
+							/>
+						</div>
 
 						<label className="form-label" htmlFor="photoURL">
-                        Photo URL
+                        <Icon name='file-image' />Photo URL
 						</label>
 						<input
 							type="text"
@@ -95,7 +101,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="description">
-                        Description
+                        <Icon name='text-paragraph' />Description
 						</label>
 						<input
 							name="description"
@@ -103,10 +109,11 @@ const Designer = () => {
 							className="border-2 form-control"
 							onChange={handleInputChange}
 							value={data.description}
+							required
 						/>
 
 						<label className="form-label" htmlFor="instagram">
-                        Instagram
+                        <Icon name='instagram' />Instagram
 						</label>
 						<input
 							type="text"
@@ -118,7 +125,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="facebook">
-                        Facebook
+                        <Icon name='facebook' />Facebook
 						</label>
 						<input
 							type="text"
@@ -130,7 +137,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="twitter">
-                        Twitter
+                        <Icon name='twitter' />Twitter
 						</label>
 						<input
 							type="text"
@@ -142,7 +149,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="youtube">
-                        YouTube
+                        <Icon name='youtube' />YouTube
 						</label>
 						<input
 							type="text"
@@ -154,7 +161,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="tiktok">
-                        TikTok
+                        <Icon name='tiktok' />TikTok
 						</label>
 						<input
 							type="text"
@@ -167,7 +174,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="discord">
-                        Discord
+                        <Icon name='discord' />Discord
 						</label>
 						<input
 							type="text"
@@ -179,7 +186,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="pinterest">
-                        Pinterest
+                        <Icon name='pinterest' />Pinterest
 						</label>
 						<input
 							type="text"
@@ -191,7 +198,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="spotify">
-                        Spotify
+                        <Icon name='spotify' />Spotify
 						</label>
 						<input
 							type="text"
@@ -203,7 +210,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="snapchat">
-                        Snapchat
+                        <Icon name='snapchat' />Snapchat
 						</label>
 						<input
 							type="text"
@@ -215,7 +222,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="reddit">
-                        Reddit
+                        <Icon name='reddit' />Reddit
 						</label>
 						<input
 							type="text"
@@ -227,7 +234,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="twitch">
-                        Twitch
+                        <Icon name='twitch' />Twitch
 						</label>
 						<input
 							type="text"
@@ -239,7 +246,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="messenger">
-                        Messenger
+                        <Icon name='messenger' />Messenger
 						</label>
 						<input
 							type="text"
@@ -251,7 +258,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="phone">
-                        Phone
+                        <Icon name='telephone' />Phone
 						</label>
 						<input
 							type="tel"
@@ -262,7 +269,7 @@ const Designer = () => {
 							value={data.phone || ''}
 						/>
 						<label className="form-label" htmlFor="email">
-                        Email
+                        <Icon name='envelope' />Email
 						</label>
 						<input
 							type="email"
@@ -273,7 +280,7 @@ const Designer = () => {
 							value={data.email || ''}
 						/>
 						<label className="form-label" htmlFor="magicLink">
-                        Magic Link
+                        <Icon name='magic' />Magic Link
 						</label>
 						<input
 							type='text'
@@ -293,6 +300,10 @@ const Designer = () => {
                             Prefill Data
 						</button>
                         &nbsp;
+						<button onClick={clearData} onKeyDown={clearData} className="btn btn-warning">
+							Clear Data
+						</button>
+						&nbsp;
 						<button onClick={createEmbed} onKeyDown={createEmbed} className='btn btn-info'>Embed Card</button>
 					</div>
 				</div>

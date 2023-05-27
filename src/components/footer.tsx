@@ -1,7 +1,7 @@
 import { name, parentCompany } from '@typescript/constants';
 import Icon from './icon';
 
-const year = new Date();
+const year = new Date().getFullYear();
 export default () => (
 	<footer className="bg-theme-orange dark:bg-gray-900 portrait:hidden text-center">
 		<div className="">
@@ -12,7 +12,7 @@ export default () => (
 					</div>
 				</div>
 				<hr />
-				<p className="text-white p-4">Copyright &copy; 2023-{year.getFullYear()}, {parentCompany}, and contributors. All Rights Reserved</p>
+				<p className="text-white p-4">Copyright &copy; 2023-{year}, {parentCompany}, and contributors. All Rights Reserved</p>
 			</div>
 		</div>
 	</footer>

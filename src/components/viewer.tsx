@@ -24,13 +24,13 @@ export default (data: Data) => (
 			</div>
 			<hr />
 			<div className="flex content-center justify-evenly">
-				{data.instagram ? <SocialLink name='Instagram' link={data.instagram} image={{
-					src: '/Instagram_Glyph_Gradient.png',
-					alt: 'instagram',
-				}} /> : <></>}
 				{data.facebook ? <SocialLink name='Facebook' link={data.facebook} image={{
 					src: '/Facebook.png',
 					alt: 'facebook',
+				}} /> : <></>}
+				{data.instagram ? <SocialLink name='Instagram' link={data.instagram} image={{
+					src: '/Instagram_Glyph_Gradient.png',
+					alt: 'instagram',
 				}} /> : <></>}
 				{data.twitter ? <SocialLink name='Twitter' link={data.twitter} image={{
 					src: '/TwitterLogoBlue.svg',
