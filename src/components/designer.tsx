@@ -38,12 +38,12 @@ const Designer = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const url = `${appURL}/view/${encodeData(data)}`;
-		setClipboardText(url).then(() => alert('Copied to clipboard!'));
+		window.navigator.clipboard.writeText(url).then(() => alert('Copied to clipboard!'));
 	};
 	const createEmbed = () => {
 		const url = `${appURL}/view/${encodeData(data)}`;
 		const embed = `<iframe src="${url}" width="100%" height="100%" style="border: none;"></iframe>`;
-		setClipboardText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
+		window.navigator.clipboard.writeText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
 	};
 
 	const prefillData = () => setData({
