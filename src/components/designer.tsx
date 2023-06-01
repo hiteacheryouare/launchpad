@@ -71,7 +71,7 @@ const Designer = () => {
 	return (
 		<>
 			<div className="grid grid-cols-2 portrait:grid-cols-1">
-				<div>
+				<div className='border-r-2 border-r-theme-blue dark:border-r-theme-secondary'>
 					<form className="p-4" onSubmit={handleSubmit}>
 						<label className="form-label" htmlFor="name">
 							<Icon name='person' />Name
@@ -307,7 +307,7 @@ const Designer = () => {
 						<button onClick={createEmbed} onKeyDown={createEmbed} className='btn btn-info'><Icon name='code'/>Embed Card</button>
 					</div>
 				</div>
-				<div>
+				<div className='p-4'>
 					<Viewer
 						name={data.name}
 						photoURL={data.photoURL}

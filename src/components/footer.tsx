@@ -3,7 +3,7 @@ import Icon from './icon';
 
 const year = new Date().getFullYear();
 export default () => (
-	<footer className="bg-theme-orange dark:bg-gray-900 portrait:hidden text-center">
+	<footer className="bg-theme-orange dark:bg-gray-700 portrait:hidden text-center">
 		<div className="">
 			<div className="">
 				<div className="">

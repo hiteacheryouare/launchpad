@@ -24,6 +24,15 @@ export const metadata = {
 	title: name,
 	description,
 };
+let bsTheme: "dark" | "light" = 'light';
+var date = new Date();
+if (typeof matchMedia !== 'undefined') {
+	matchMedia('(prefers-color-scheme: dark)').matches ? bsTheme = "dark" : bsTheme = "light";
+} else {
+	if (date.getHours() >= 20) {
+		bsTheme = "dark"
+	}
+}
 
 export default function RootLayout({
 	children,
@@ -32,7 +41,7 @@ export default function RootLayout({
 }) {
 	return (
 		<>
-			<html lang="en">
+			<html lang="en" data-bs-theme={bsTheme}>
 				<head>
 					<link rel="shortcut icon" href="/rocket-takeoff-fill.svg" type="image/x-icon" />
 				</head>
