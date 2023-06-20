@@ -2,29 +2,30 @@
 
 import TypeIt from 'typeit-react';
 
-const waitTime = 1500;
-export default () => (
+export default (props: {
+	waitTime: number;
+}) => (
 	<div className="font-bold text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
 		<TypeIt
 			getBeforeInit={(instance) => {
 				instance
 					.type('email')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(5)
 					.type('social media')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(12)
 					.type('website')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(7)
 					.type('landing page')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(12)
 					.type('e-commerce')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(10)
 					.type('app')
-					.pause(waitTime)
+					.pause(props.waitTime)
 					.delete(3)
 					.type('marketing');
 				return instance;

@@ -6,7 +6,7 @@ export const name = 'Launchpad';
 export const description = 'Launch your social media presence to the moon in no time.';
 export const { version } = pkg;
 export const url = 'https://launchpadapp.vercel.app';
-export const parentCompany = 'Launchpad Labs';
+export const parentCompany = `${name} Labs`;
 export const banner = `
 ******************************
 ${name} v${version}

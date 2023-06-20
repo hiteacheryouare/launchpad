@@ -7,7 +7,7 @@ export default () => (
 	<div className="bg-gradient-to-br from-theme-secondary via-theme-blue to-theme-primary p-10" style={{ height: '100%' }}>
 		<div className="font-bold text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl grid grid-cols-2 portrait:grid-cols-1 pb-96" >
 			<div className="text-white p-10 dark:leading-relaxed">
-        Take your <Typer /> <span className="underline">to the moon</span>
+        Take your <Typer waitTime={1500} /> <span className="underline">to the moon</span>
 				<div>
 					<Link href="/design" className="btn btn-light"> <i className="bi bi-layers-half"></i> Launch the Generator</Link> &nbsp;
 					<Link href="/view" className="btn btn-dark"> <i className="bi bi-eye"></i> View a Creation</Link> &nbsp;
