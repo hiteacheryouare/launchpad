@@ -1,7 +1,18 @@
 import { Data } from '@typescript/types';
 import Link from 'next/link';
-import Image from 'next/image';
 import SocialLink from './socialLink';
+import Facebook from '../../public/Facebook.png'
+import Instagram from '../../public/Instagram_Glyph_Gradient.png'
+import Twitter from '../../public/TwitterLogoBlue.svg'
+import YouTube from '../../public/yt_icon_rgb.png'
+import TikTok from '../../public/LogosTiktokIcon.svg'
+import Spotify from '../../public/logos-spotify-icon.svg';
+import Discord from '../../public/logos-discord-icon.svg'
+import Pinterest from '../../public/logos-pinterest.svg'
+import Snapchat from '../../public/Snapchat_2019.png';
+import Twitch from '../../public/TwitchGlitchPurple.svg'
+import Reddit from '../../public/logos-reddit-icon.svg'
+import Messenger from '../../public/messenger.png'
 
 export default (data: Data) => (
 	<div>
@@ -25,51 +36,51 @@ export default (data: Data) => (
 			<hr />
 			<div className="flex content-center justify-evenly">
 				{data.facebook ? <SocialLink name='Facebook' link={data.facebook} image={{
-					src: '/Facebook.png',
+					src: Facebook,
 					alt: 'facebook',
 				}} /> : <></>}
 				{data.instagram ? <SocialLink name='Instagram' link={data.instagram} image={{
-					src: '/Instagram_Glyph_Gradient.png',
+					src: Instagram,
 					alt: 'instagram',
 				}} /> : <></>}
 				{data.twitter ? <SocialLink name='Twitter' link={data.twitter} image={{
-					src: '/TwitterLogoBlue.svg',
+					src: Twitter,
 					alt: 'twitter',
 				}} /> : <></>}
 				{data.youtube ? <SocialLink name='YouTube' link={data.youtube} image={{
-					src: '/yt_icon_rgb.png',
+					src: YouTube,
 					alt: 'youtube',
 				}} /> : <></>}
 				{data.tiktok ? <SocialLink name='TikTok' link={data.tiktok} image={{
-					src: '/LogosTiktokIcon.svg',
+					src: TikTok,
 					alt: 'tiktok',
 				}} /> : <></>}
 				{data.discord ? <SocialLink name='Discord' link={data.discord} image={{
-					src: '/logos-discord-icon.svg',
+					src: Discord,
 					alt: 'discord',
 				}} /> : <></>}
 				{data.pinterest ? <SocialLink name='Pinterest' link={data.pinterest} image={{
-					src: 'logos-pinterest.svg',
+					src: Pinterest,
 					alt: 'pinterest',
 				}} /> : <></>}
 				{data.spotify ? <SocialLink name='Spotify' link={data.spotify} image={{
-					src: '/logos-spotify-icon.svg',
+					src: Spotify,
 					alt: 'spotify',
 				}} /> : <></>}
 				{data.snapchat ? <SocialLink name='Snapchat' link={data.snapchat} image={{
-					src: '/Snapchat_2019.png',
+					src: Snapchat,
 					alt: 'snapchat',
 				}} /> : <></>}
 				{data.reddit ? <SocialLink name='Reddit' link={data.reddit} image={{
-					src: '/logos-reddit-icon.svg',
+					src: Reddit,
 					alt: 'reddit',
 				}} /> : <></>}
 				{data.twitch ? <SocialLink name='Twitch' link={data.twitch} image={{
-					src: '/TwitchGlitchPurple.svg',
+					src: Twitch,
 					alt: 'twitch glitch',
 				}} /> : <></>}
 				{data.messenger ? <SocialLink name='Messenger' link={data.messenger} image={{
-					src: '/messenger.png',
+					src: Messenger,
 					alt: 'messenger',
 				}} /> : <></>}
 			</div>

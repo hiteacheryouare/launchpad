@@ -4,6 +4,7 @@ import Comment from '../../components/comment';
 import { banner, name, description } from '../../typescript/constants';
 import Navbar from '../../components/nav';
 import Footer from '../../components/footer';
+import Script from 'next/script';
 
 const poppins = Poppins({
 	weight: [
@@ -24,15 +25,6 @@ export const metadata = {
 	title: name,
 	description,
 };
-let bsTheme: "dark" | "light" = 'light';
-var date = new Date();
-if (typeof matchMedia !== 'undefined') {
-	matchMedia('(prefers-color-scheme: dark)').matches ? bsTheme = "dark" : bsTheme = "light";
-} else {
-	if (date.getHours() >= 20) {
-		bsTheme = "dark"
-	}
-}
 
 export default function RootLayout({
 	children,
@@ -41,11 +33,20 @@ export default function RootLayout({
 }) {
 	return (
 		<>
-			<html lang="en" data-bs-theme={bsTheme}>
+			<html lang="en">
 				<head>
 					<link rel="shortcut icon" href="/rocket-takeoff-fill.svg" type="image/x-icon" />
+					<Script id="toggleTheme">
+						{
+							`if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+								document.body.setAttribute('data-bs-theme', 'dark')
+							} else {
+								document.body.setAttribute('data-bs-theme', 'light')
+							}`
+						}
+					</Script>
 				</head>
-				<body className={poppins.className}>
+				<body className={poppins.className} data-bs-theme="light">
 					<Comment text={banner} />
 					<Navbar />
 					{children}
