@@ -137,7 +137,7 @@ const Designer = () => {
 						/>
 
 						<label className="form-label" htmlFor="twitter">
-                        <Icon name='twitter' />Twitter
+                        <Icon name='twitter-x' />Twitter/X
 						</label>
 						<input
 							type="text"

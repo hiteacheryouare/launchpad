@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SocialLink from './socialLink';
 import Facebook from '../../public/Facebook.png'
 import Instagram from '../../public/Instagram_Glyph_Gradient.png'
-import Twitter from '../../public/TwitterLogoBlue.svg'
+import Twitter from '../../public/x-twitter.svg'
 import YouTube from '../../public/yt_icon_rgb.png'
 import TikTok from '../../public/LogosTiktokIcon.svg'
 import Spotify from '../../public/logos-spotify-icon.svg';
