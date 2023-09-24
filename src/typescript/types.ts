@@ -1,7 +1,3 @@
-interface Link {
-  name: string;
-  href: string;
-}
 export interface Data {
   name: string;
   photoURL?: string | null
@@ -21,5 +17,4 @@ export interface Data {
   phone?: string | null;
   email?: string | null;
   magicLink?: string | null;
-  links?: Link[] | null
 }
