@@ -12,10 +12,10 @@ export async function generateMetadata(
 	{ params }: Props,
   ): Promise<Metadata> {
 	// read route params
-	const data = params.data
+	const { data } = params
 	const dData = decodeData(data);
 	return {
-	  title: dData.name,
+	  title: `${dData.name} | ${name.toLowerCase}`,
 	  description: dData.description,
 	  applicationName: name.toLowerCase(),
 	  generator: `${name.toLowerCase()} & Next.js`,
