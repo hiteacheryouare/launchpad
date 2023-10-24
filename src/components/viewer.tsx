@@ -13,6 +13,7 @@ import Snapchat from '../../public/Snapchat_2019.png';
 import Twitch from '../../public/TwitchGlitchPurple.svg'
 import Reddit from '../../public/logos-reddit-icon.svg'
 import Messenger from '../../public/messenger.png'
+import LinkedIn from '../../public/linkedin.svg'
 
 export default (data: Data) => (
 	<div>
@@ -82,6 +83,10 @@ export default (data: Data) => (
 				{data.messenger ? <SocialLink name='Messenger' link={data.messenger} image={{
 					src: Messenger,
 					alt: 'messenger',
+				}} /> : <></>}
+				{data.linkedIn ? <SocialLink name='LinkedIn' link={data.linkedIn} image={{
+					src: LinkedIn,
+					alt: 'LinkedIn',
 				}} /> : <></>}
 			</div>
 			<hr />

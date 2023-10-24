@@ -13,7 +13,8 @@ export interface Data {
   snapchat?: string | null
   reddit?: string | null
   twitch?: string | null;
-  messenger?: string | null
+  messenger?: string | null;
+  linkedIn?: string | null;
   phone?: string | null;
   email?: string | null;
   magicLink?: string | null;

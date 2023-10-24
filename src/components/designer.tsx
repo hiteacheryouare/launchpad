@@ -26,6 +26,7 @@ const Designer = () => {
 		reddit: '',
 		twitch: '',
 		messenger: '',
+		linkedIn: '',
 		phone: '',
 		email: '',
 		magicLink: '',
@@ -40,7 +41,8 @@ const Designer = () => {
 		const url = `${appURL}/view/${encodeData(data)}`;
 		window.navigator.clipboard.writeText(url).then(() => alert('Copied to clipboard!'));
 	};
-	const createEmbed = () => {
+	const createEmbed = async () => {
+		
 		const url = `${appURL}/view/${encodeData(data)}`;
 		const embed = `<iframe src="${url}" width="100%" height="100%" style="border: none;"></iframe>`;
 		window.navigator.clipboard.writeText(embed).then(() => alert('Copied to clipboard! Now paste the code into any place that supports embedding (including email!'));
@@ -62,6 +64,7 @@ const Designer = () => {
 		reddit: 'https://www.reddit.com/r/memes/',
 		twitch: 'https://www.twitch.tv/chocotaco',
 		messenger: 'https://www.messenger.com/',
+		linkedIn: 'https://www.linkedin.com/in/t3gg/',
 		phone: '+1 (555) 555-5555',
 		email: 'john.dover@joemail.com',
 		magicLink: 'https://demotivator.web.app/',
@@ -257,6 +260,18 @@ const Designer = () => {
 							value={data.messenger || ''}
 						/>
 
+						<label className="form-label" htmlFor="linkedin">
+                        <Icon name='linkedin' />LinkedIn
+						</label>
+						<input
+							type="text"
+							name="linkedin"
+							id="linkedin"
+							className="border-2 form-control"
+							onChange={handleInputChange}
+							value={data.linkedIn || ''}
+						/>
+
 						<label className="form-label" htmlFor="phone">
                         <Icon name='telephone' />Phone
 						</label>
@@ -324,6 +339,7 @@ const Designer = () => {
 						reddit={data.reddit}
 						twitch={data.twitch}
 						messenger={data.messenger}
+						linkedIn={data.linkedIn}
 						phone={data.phone}
 						email={data.email}
 						magicLink={data.magicLink}

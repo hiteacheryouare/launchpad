@@ -1,30 +1,33 @@
 import { decodeData } from '@typescript/decode';
 import Viewer from '../../../components/viewer';
 import type { Metadata } from 'next';
-import { name, url } from '@typescript/constants';
+import { name as appName, url } from '@typescript/constants';
 
 interface Props {
 	params: { data: string }
 	searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata(
-	{ params }: Props,
-  ): Promise<Metadata> {
-	// read route params
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const { data } = params
 	const dData = decodeData(data);
 	return {
-	  title: `${dData.name} | ${name.toLowerCase}`,
-	  description: dData.description,
-	  applicationName: name.toLowerCase(),
-	  generator: `${name.toLowerCase()} & Next.js`,
-	  keywords: dData.description,
-	  openGraph: {
-		images: dData.photoURL || `${url}/rocket-takeoff-fill.svg`
-	  },
+		title: `${dData.name} | ${appName}`,
+		description: dData.description,
+		applicationName: appName,
+		generator: `${appName} & Next.js`,
+		keywords: dData.description,
+		openGraph: {
+			images: dData.photoURL || `${url}/rocket-takeoff-fill.svg`,
+			url: `${url}/view/${data}`,
+			title: `${dData.name} | ${appName}`,
+			description: dData.description,
+			siteName: appName,
+			type: 'website',
+			locale: 'en_US',
+		},
 	}
-  }
+}
 
 
 export default function View({ params }: {
