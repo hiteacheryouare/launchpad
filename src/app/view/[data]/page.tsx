@@ -1,5 +1,31 @@
 import { decodeData } from '@typescript/decode';
 import Viewer from '../../../components/viewer';
+import type { Metadata } from 'next';
+import { name, url } from '@typescript/constants';
+
+interface Props {
+	params: { data: string }
+	searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+	{ params }: Props,
+  ): Promise<Metadata> {
+	// read route params
+	const data = params.data
+	const dData = decodeData(data);
+	return {
+	  title: dData.name,
+	  description: dData.description,
+	  applicationName: name.toLowerCase(),
+	  generator: `${name.toLowerCase()} & Next.js`,
+	  keywords: dData.description,
+	  openGraph: {
+		images: dData.photoURL || `${url}/rocket-takeoff-fill.svg`
+	  },
+	}
+  }
+
 
 export default function View({ params }: {
     params: {
