@@ -3,7 +3,7 @@ import encodeData from '@typescript/encode';
 import { Data } from '@typescript/types';
 import { url } from '@typescript/constants';
 
-export function PUT(req: NextRequest) {
+export function GET(req: NextRequest) {
 	const name = req.nextUrl.searchParams.get('name') as string;
 	const description = req.nextUrl.searchParams.get('description') as string;
 	const purl = req.nextUrl.searchParams.get('purl');
