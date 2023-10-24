@@ -75,7 +75,7 @@ export default () => (
 					</div>
 				</li>
 				<li>
-                    Make a <code>PUT</code> request!
+                    Make a <code>GET</code> request!
 				</li>
 
 			</ol>
